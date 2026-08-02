@@ -7,40 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./primitives/global.css" rel="stylesheet"/>
     <title>Document</title>
+    <script type="module" src="./main.js"></script>
 </head>
 
 <body>
-    <h1>Textual elements</h1>
-    <div>
-        <div>
-            <h1>This is an h1</h1>
-            <h2>This is an h2</h2>
-            <h3>This is an h3</h3>
-            <h4>This is an h4</h4>
-            <h5>This is an h5</h5>
-            <h6>This is an h6</h6>
-            <p>Text in a paragraph</p>
-            <div>Text in a div</div>
-            <span>Text in a span</span>
-            <article>Text in a article</article>
-            <section>Text in a section</section>
-            <a href="https://google.com" target="_blank">this is an anchor</a>
-        </div>
-
-        <div class="reset">
-            <h1>This is an h1</h1>
-            <h2>This is an h2</h2>
-            <h3>This is an h3</h3>
-            <h4>This is an h4</h4>
-            <h5>This is an h5</h5>
-            <h6>This is an h6</h6>
-            <p>Text in a paragraph</p>
-            <div>Text in a div</div>
-            <span>Text in a span</span>
-            <article>Text in a article</article>
-            <section>Text in a section</section>
-            <a href="https://google.com" target="_blank">this is an anchor</a>  
-        </div>
+    <div class="l-split">
+        <button id="menu-button">Menu button</button>
+        <ui-drawer trigger="menu-button">
+            <div class="backdrop"></div>
+            <aside class="panel from-bottom">
+                <p>entry 1</p>
+                <p>entry 2</p>
+                <p>entry 3</p>
+            </aside>
+        </ui-drawer>
+        <section class="l-split__fluid">
+            this is the body
+        </section>
     </div>
 </body>
 

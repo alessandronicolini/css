@@ -1,12 +1,11 @@
 @layer base {
-   .reset {
-        * {
-            box-sizing: border-box;
-            margin: 0;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        text-decoration: none;
+    }
 
-        a {
-            text-decoration: none;
-        }
+    .view {
+        border: 1px solid black;
     }
 }
