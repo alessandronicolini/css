@@ -1,17 +1,28 @@
-class UIDrawer extends HTMLElement {
+import "./drawer.scss";
+
+class Drawer extends HTMLElement {
 
     constructor() {
         super();
     }
 
     connectedCallback() {
+        console.log("drawer created!");
         const triggerId = this.getAttribute("trigger");
-        const drawerTrigger = document.querySelector(`#${triggerId}`);
-        const drawerBackdrop = this.querySelector(".backdrop");
+        if (triggerId) {
+            const drawerTrigger = document.querySelector<HTMLElement>(`#${triggerId}`);
+            if (drawerTrigger) {
+                drawerTrigger.addEventListener('click', () => this.open());
+            }
+        }
+        
+        const drawerBackdrop = this.querySelector<HTMLElement>(".backdrop");
+        if (drawerBackdrop) {
+            drawerBackdrop.addEventListener('click', () => this.close());
+        }
 
         this.onKeyDown = this.onKeyDown.bind(this);
-        drawerTrigger.addEventListener('click', () => this.open());
-        drawerBackdrop.addEventListener('click', () => this.close());
+
     }
 
     open() {
@@ -34,12 +45,12 @@ class UIDrawer extends HTMLElement {
         }, 250);
     }
 
-    onKeyDown(event) {
+    onKeyDown(event: KeyboardEvent) {
         if (event.key == "Escape") {
             this.close();
         }
     }
 }
 
-customElements.define("ui-drawer", UIDrawer);
+customElements.define("ui-drawer", Drawer);
 
