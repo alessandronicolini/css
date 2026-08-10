@@ -1,1 +1,1 @@
-import "./components/drawer/drawer.js";
+import "./src/components/drawer/drawer.js";
