@@ -3,4 +3,3 @@
 @import "./base.css" layer(base);
 @import "./layout.css" layer(layout);
 @import "../components/drawer/drawer.css" layer(components);
-@import "./utilities.css" layer(utilities);
