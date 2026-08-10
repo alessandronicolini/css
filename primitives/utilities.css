@@ -1,7 +1,5 @@
-@layer utilities {
-    @media (width < 768px) {
-        .u-hide-on-mobile {
-            display: none;
-        }
+@media (width < 768px) {
+    .u-hide-on-mobile {
+        display: none;
     }
 }

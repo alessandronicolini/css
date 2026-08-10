@@ -1,87 +1,86 @@
-@layer components {
-    ui-drawer {
-        display: block;
-    }
-
-    @media(max-width:768px) {
-
-        ui-drawer {
-            position: fixed;
-            display: flex;
-            inset: 0;
-            pointer-events: none;
-        }
-
-        ui-drawer .backdrop {
-            position: absolute;
-            inset: 0;
-            background: rgb(0 0 0 / .5);
-            opacity: 0;
-        }
-
-        ui-drawer .panel {
-            position: absolute;
-            will-change: transform;
-        }
-
-        ui-drawer .panel.from-left {
-            left: 0;
-            top: 0;
-            height: 100%;
-            transform: translateX(-100%);
-        }
-
-        ui-drawer .panel.from-right {
-            right: 0;
-            top: 0;
-            height: 100%;
-            transform: translateX(100%);
-        }
-
-        ui-drawer .panel.from-top {
-            left: 0;
-            top: 0;
-            width: 100%;
-            transform: translateY(-100%);
-        }
-
-        ui-drawer .panel.from-bottom {
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            transform: translateY(100%);
-        }
-
-        ui-drawer.is-animating .backdrop {
-            transition: opacity 150ms ease;
-        }
-
-        ui-drawer.is-animating .panel {
-            transition: transform 250ms ease;
-        }
-
-        ui-drawer[open] {
-            pointer-events: auto;
-        }
-
-        ui-drawer[open] .backdrop {
-            opacity: 1;
-        }
-
-        ui-drawer[open] .panel {
-            transition: transform 250ms ease 150ms;
-        }
-        
-        ui-drawer[open] .panel.from-left,
-        ui-drawer[open] .panel.from-right  {
-            transform: translateX(0);
-        }
-
-        ui-drawer[open] .panel.from-top,
-        ui-drawer[open] .panel.from-bottom {
-            transform: translateY(0);
-        }
-
-    }
+ui-drawer {
+    display: block;
 }
+
+@media(max-width:768px) {
+
+    ui-drawer {
+        position: fixed;
+        display: flex;
+        inset: 0;
+        pointer-events: none;
+    }
+
+    ui-drawer .backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgb(0 0 0 / .5);
+        opacity: 0;
+    }
+
+    ui-drawer .panel {
+        position: absolute;
+        will-change: transform;
+    }
+
+    ui-drawer .panel.from-left {
+        left: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(-100%);
+    }
+
+    ui-drawer .panel.from-right {
+        right: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(100%);
+    }
+
+    ui-drawer .panel.from-top {
+        left: 0;
+        top: 0;
+        width: 100%;
+        transform: translateY(-100%);
+    }
+
+    ui-drawer .panel.from-bottom {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform: translateY(100%);
+    }
+
+    ui-drawer.is-animating .backdrop {
+        transition: opacity 150ms ease;
+    }
+
+    ui-drawer.is-animating .panel {
+        transition: transform 250ms ease;
+    }
+
+    ui-drawer[open] {
+        pointer-events: auto;
+    }
+
+    ui-drawer[open] .backdrop {
+        opacity: 1;
+    }
+
+    ui-drawer[open] .panel {
+        transition: transform 250ms ease 150ms;
+    }
+    
+    ui-drawer[open] .panel.from-left,
+    ui-drawer[open] .panel.from-right  {
+        transform: translateX(0);
+    }
+
+    ui-drawer[open] .panel.from-top,
+    ui-drawer[open] .panel.from-bottom {
+        transform: translateY(0);
+    }
+
+}
+
 

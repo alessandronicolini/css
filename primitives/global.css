@@ -1,6 +1,0 @@
-@layer base, layout, components, utilities;
-
-@import "./base.css";
-@import "./layout.css";
-@import "../components/drawer/drawer.css";
-@import "./utilities.css";
