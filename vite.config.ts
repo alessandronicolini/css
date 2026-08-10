@@ -1,19 +1,27 @@
 import { defineConfig } from "vite";
 
-export default defineConfig(({ command }) => {
-    if (command === "serve") {
+export default defineConfig(({ mode }) => {
+    if (mode === "library") {
         return {
-            root: "showcase",
-        };
-    }
+            build: {
+                lib: {
+                    entry: "src/index.ts",
+                    name: "CustomUI",
+                    fileName: "custom-ui",
+                },
 
-    return {
-        build: {
-            lib: {
-                entry: "src/index.ts",
-                name: "CustomUI",
-                fileName: "custom-ui",
-            }
+                outDir: "dist/lib",
+                emptyOutDir: true,
+            },
         }
     };
+
+    return {
+        root: "showcase",
+        build: {
+            outDir: "../dist/showcase",
+            emptyOutDir: true,
+        },
+    };
+
 });
