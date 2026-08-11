@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module" src="./main.ts"></script>
+    <link rel="stylesheet" href="./styles.scss"/>
 </head>
 
 <body>
-    <div class="l-split">
-        <button id="menu-button">Menu button</button>
+    <button id="menu-button">Menu button</button>
+    <div>
         <ui-drawer trigger="menu-button" side="left">
             <div class="ui-drawer__backdrop"></div>
             <aside class="ui-drawer__panel">
@@ -20,9 +21,11 @@
                 <p>entry 3</p>
             </aside>
         </ui-drawer>
-        <section class="l-split__fluid">
-            this is the body
-        </section>
+        <!-- <section class="l-stack l-cluster-md">
+            <article> article one </article>
+            <article> article two </article>
+            <article> article three </article>
+        </section> -->
     </div>
 </body>
 

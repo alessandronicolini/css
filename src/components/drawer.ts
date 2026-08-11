@@ -1,5 +1,3 @@
-import "./drawer.scss";
-
 class Drawer extends HTMLElement {
 
     constructor() {
@@ -16,7 +14,7 @@ class Drawer extends HTMLElement {
             }
         }
         
-        const drawerBackdrop = this.querySelector<HTMLElement>(".backdrop");
+        const drawerBackdrop = this.querySelector<HTMLElement>(".ui-drawer__backdrop");
         if (drawerBackdrop) {
             drawerBackdrop.addEventListener('click', () => this.close());
         }

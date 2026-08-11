@@ -45,6 +45,5 @@
   "include": [
     "src",
     "showcase",
-    "vite-env.d.ts"
   ]
 }

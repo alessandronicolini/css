@@ -1,0 +1,82 @@
+@use "../tokens" as tokens;
+
+@layer components {
+    /* Drawer behavioural primitive */
+
+    ui-drawer {
+        position: fixed;
+        display: flex;
+        inset: 0;
+        pointer-events: none;
+    }
+
+    ui-drawer .ui-drawer__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgb(0 0 0 / .5);
+        opacity: 0;
+    }
+
+    ui-drawer .ui-drawer__panel {
+        position: absolute;
+        will-change: transform;
+    }
+
+    ui-drawer[side="left"] .ui-drawer__panel{
+        left: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(-100%);
+    }
+
+    ui-drawer[side="right"] .ui-drawer__panel{
+        right: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(100%);
+    }
+
+    ui-drawer[side="top"] .ui-drawer__panel {
+        left: 0;
+        top: 0;
+        width: 100%;
+        transform: translateY(-100%);
+    }
+
+    ui-drawer[side="bottom"] .ui-drawer__panel {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform: translateY(100%);
+    }
+
+    ui-drawer.is-animating .ui-drawer__backdrop {
+        transition: opacity 150ms ease;
+    }
+
+    ui-drawer.is-animating .ui-drawer__panel {
+        transition: transform 250ms ease;
+    }
+
+    ui-drawer[open] {
+        pointer-events: auto;
+    }
+
+    ui-drawer[open] .ui-drawer__backdrop {
+        opacity: 1;
+    }
+
+    ui-drawer[open] .ui-drawer__panel {
+        transition: transform 250ms ease 150ms;
+    }
+
+    ui-drawer[open][side="left"] .ui-drawer__panel,
+    ui-drawer[open][side="right"] .ui-drawer__panel {
+        transform: translateX(0);
+    }
+
+    ui-drawer[open][side="top"] .ui-drawer__panel,
+    ui-drawer[open][side="bottom"] .ui-drawer__panel {
+        transform: translateY(0);
+    }
+}

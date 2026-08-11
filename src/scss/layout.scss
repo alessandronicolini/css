@@ -1,0 +1,67 @@
+@use "./tokens/index" as tokens;
+
+/* LAYOUT MIXINS */
+@mixin stack {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: var(--layout-gap, 1rem);
+}
+
+@mixin cluster {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--layout-gap, 1rem);
+}
+
+@mixin sidebar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: var(--layout-gap, 1rem);
+
+    > :first-child {
+        flex-basis: var(--aside-width, 18rem);
+        flex-grow: 0;
+    }
+
+    > :last-child {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+
+}
+
+@layer layout {
+    /* LAYOUT PRIMITIVES */
+    .l-stack {
+        @include stack;
+    }
+
+    .l-cluster {
+        @include cluster;
+    }
+
+    .l-sidebar {
+        @include sidebar;
+    }
+
+    /* RESPONSIVE LAYOUTS PRIMITIVES */
+    @each $br-name, $br in tokens.$breakpoints {
+        @media (width >= $br) {
+
+            .l-stack-#{$br-name} {
+                @include stack;
+            }
+
+            .l-cluster-#{$br-name} {
+                @include cluster;
+            }
+
+            .l-sidebar-#{$br-name} {
+                @include sidebar;
+            }
+        }
+    }
+}
