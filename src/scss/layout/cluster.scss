@@ -1,0 +1,22 @@
+@use "../tokens" as tokens;
+
+@mixin cluster {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--layout-gap, 1rem);
+}
+
+@layer layout {
+    .l-cluster {
+        @include cluster;
+    }
+
+    @each $br-name, $br in tokens.$breakpoints {
+        @media (width >= $br) {
+            .l-cluster-#{$br-name} {
+                @include cluster;
+            }
+        }
+    }
+}

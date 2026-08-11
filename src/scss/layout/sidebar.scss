@@ -1,0 +1,33 @@
+@use "../tokens" as tokens;
+
+@mixin sidebar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: var(--layout-gap, 1rem);
+
+    > :first-child {
+        flex-basis: var(--aside-width, 18rem);
+        flex-grow: 0;
+    }
+
+    > :last-child {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+
+}
+
+@layer layout {
+    .l-sidebar {
+        @include sidebar;
+    }
+
+    @each $br-name, $br in tokens.$breakpoints {
+        @media (width >= $br) {
+            .l-sidebar-#{$br-name} {
+                @include sidebar;
+            }
+        }
+    }
+}

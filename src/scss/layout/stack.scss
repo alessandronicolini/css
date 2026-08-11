@@ -1,0 +1,22 @@
+@use "../tokens" as tokens;
+
+@mixin stack {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: var(--layout-gap, 1rem);
+}
+
+@layer layout {
+    .l-stack {
+        @include stack;
+    }
+
+    @each $br-name, $br in tokens.$breakpoints {
+        @media (width >= $br) {
+            .l-stack-#{$br-name} {
+                @include stack;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
-@forward "./tokens";
-@forward "./base";
-@forward "./layout.scss";
-@forward "./components";
+@forward "tokens/index";
+@forward "base";
+@forward "layout/index";
+@forward "components/index";
 
 @layer tokens, base, layout, components, utilities;
 
