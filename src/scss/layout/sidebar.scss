@@ -1,5 +1,15 @@
 @use "../tokens" as tokens;
 
+/*
+Nell'implementazione attuale l'aside fisso è il primo
+elemento che diventa allineato a sinsitra quando il layout è attivo,
+la versione right è parte del contratto, fa si che l'aside
+sia presentato a destra, inceve che a sinistra.
+L'aside è sempre il primo elemento dei due (se presi disposti verticalmente)!
+
+Potrebbe aver senso far si che uno dei due elementi qualsiasi possa diventare aside
+presentato a destra o sinistra ?
+*/
 @mixin sidebar {
     display: flex;
     flex-direction: row;
@@ -7,15 +17,23 @@
     gap: var(--layout-gap, 1rem);
 
     > :first-child {
-        flex-basis: var(--aside-width, 18rem);
-        flex-grow: 0;
+        flex: 0 0 var(--aside-width, 18rem);
     }
 
     > :last-child {
-        flex-grow: 1;
-        flex-basis: 0;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+@mixin sidebar-right {
+    > :first-child {
+        order: 2;
     }
 
+    > :last-child {
+        order: 1;
+    }
 }
 
 @layer layout {
@@ -23,10 +41,20 @@
         @include sidebar;
     }
 
+    .l-sidebar--right {
+        @include sidebar;
+        @include sidebar-right;
+    }
+
     @each $br-name, $br in tokens.$breakpoints {
         @media (width >= $br) {
             .l-sidebar-#{$br-name} {
                 @include sidebar;
+            }
+
+            .l-sidebar-#{$br-name}--right {
+                @include sidebar;
+                @include sidebar-right;
             }
         }
     }
