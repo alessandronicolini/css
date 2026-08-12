@@ -1,6 +1,26 @@
 @use "sass:map";
 @use "tokens";
 
+
+
+@mixin define-typography-properties {
+    @each $name, $style in tokens.$typography {
+        $size: map.get(tokens.$font-sizes, map.get($style, size));
+        $weight: map.get(tokens.$font-weights, map.get($style, weight));
+        $line-height: map.get(tokens.$font-line-heights, map.get($style, line-height));
+
+        --f-#{$name}-size: #{$size};
+        --f-#{$name}-weight: #{$weight};
+        --f-#{$name}-line-height: #{$line-height};
+    }
+}
+
+@mixin define-color-properties {
+    @each $role, $color in tokens.$colors-conf {
+        --c-#{$role}: #{$color};
+    }
+}
+
 @layer base {
     * {
         box-sizing: border-box;
@@ -12,20 +32,9 @@
         border: 1px solid black;
     }
 
-    @mixin define-typography-properties {
-        @each $name, $style in tokens.$typography {
-            $size: map.get(tokens.$font-sizes, map.get($style, size));
-            $weight: map.get(tokens.$font-weights, map.get($style, weight));
-            $line-height: map.get(tokens.$font-line-heights, map.get($style, line-height));
-
-            --font-#{$name}-size: #{$size};
-            --font-#{$name}-weight: #{$weight};
-            --font-#{$name}-line-height: #{$line-height};
-        }
-    }
-
     :root {
         @include define-typography-properties;
+        @include define-color-properties;
     }
 
     @each $name, $style in tokens.$typography {
