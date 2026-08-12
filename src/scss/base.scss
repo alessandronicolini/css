@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "tokens";
+
 @layer base {
     * {
         box-sizing: border-box;
@@ -7,6 +10,30 @@
 
     .view {
         border: 1px solid black;
+    }
+
+    @mixin define-typography-properties {
+        @each $name, $style in tokens.$typography {
+            $size: map.get(tokens.$font-sizes, map.get($style, size));
+            $weight: map.get(tokens.$font-weights, map.get($style, weight));
+            $line-height: map.get(tokens.$font-line-heights, map.get($style, line-height));
+
+            --font-#{$name}-size: #{$size};
+            --font-#{$name}-weight: #{$weight};
+            --font-#{$name}-line-height: #{$line-height};
+        }
+    }
+
+    :root {
+        @include define-typography-properties;
+    }
+
+    @each $name, $style in tokens.$typography {
+        .t-#{$name} {
+            font-size: var(--font-#{$name}-size);
+            font-weight: var(--font-#{$name}-weight);
+            line-height: var(--font-#{$name}-line-height);
+        }
     }
 }
 

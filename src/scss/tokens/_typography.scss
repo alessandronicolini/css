@@ -31,15 +31,17 @@ $font-weights: (
 );
 
 $font-sizes: (
-    100: math.pow(map.get($scale, "ratio"), -2) * map.get($scale, "base"),
-    200: math.pow(map.get($scale, "ratio"), -1) * map.get($scale, "base"),
-    300: map.get($scale, "base"),
-    400: map.get($scale, "ratio") * map.get($scale, "base"),
-    500: math.pow(map.get($scale, "ratio"), 2) * map.get($scale, "base"),
-    600: math.pow(map.get($scale, "ratio"), 3) * map.get($scale, "base"),
-    700: math.pow(map.get($scale, "ratio"), 4) * map.get($scale, "base"),
-    800: math.pow(map.get($scale, "ratio"), 5) * map.get($scale, "base"),
-    900: math.pow(map.get($scale, "ratio"), 6) * map.get($scale, "base"),
+    50:  math.pow(map.get($scale, "ratio"), -2) * map.get($scale, "base"),
+    100: math.pow(map.get($scale, "ratio"), -1) * map.get($scale, "base"),
+    200: math.pow(map.get($scale, "ratio"), 0) * map.get($scale, "base"),
+    300: math.pow(map.get($scale, "ratio"), 1) * map.get($scale, "base"),
+    400: math.pow(map.get($scale, "ratio"), 2) * map.get($scale, "base"),
+    500: math.pow(map.get($scale, "ratio"), 3) * map.get($scale, "base"),
+    600: math.pow(map.get($scale, "ratio"), 4) * map.get($scale, "base"),
+    700: math.pow(map.get($scale, "ratio"), 5) * map.get($scale, "base"),
+    800: math.pow(map.get($scale, "ratio"), 6) * map.get($scale, "base"),
+    900: math.pow(map.get($scale, "ratio"), 7) * map.get($scale, "base"),
+    950: math.pow(map.get($scale, "ratio"), 8) * map.get($scale, "base"),
 );
 
 $font-line-heights: (
