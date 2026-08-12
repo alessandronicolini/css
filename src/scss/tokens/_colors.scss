@@ -15,11 +15,8 @@ $neutral: (
 );
 
 $colors-conf: (
-    // superfici: 50 è il canvas e poi a salire di livello
-    surface-50: map.get($neutral, 50),   // le aree più ampie e il canvas
+    surface-50: map.get($neutral, 50),  // le aree più ampie e il canvas
     surface-100: map.get($neutral, 100), // container secondari che occuano meno area, come card
-
-    // colore del testo che va sulla superficie
     on-surface: map.get($neutral, 900),
     on-surface-variant: map.get($neutral, 700),
 
