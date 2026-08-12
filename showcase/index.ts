@@ -1,1 +1,1 @@
-import "../src";
+import "../custom-ui";

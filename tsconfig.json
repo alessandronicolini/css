@@ -43,7 +43,7 @@
     "skipLibCheck": true,
   },
   "include": [
-    "src",
+    "custom-ui",
     "showcase",
     "vite-env.d.ts"
   ]

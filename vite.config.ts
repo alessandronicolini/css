@@ -5,7 +5,7 @@ export default defineConfig(({ mode }) => {
         return {
             build: {
                 lib: {
-                    entry: "src/index.ts",
+                    entry: "custom-ui/index.ts",
                     name: "CustomUI",
                     fileName: "custom-ui",
                 },
