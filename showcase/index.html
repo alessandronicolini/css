@@ -11,8 +11,8 @@
 
 <body>
     <button id="menu-button">Menu button</button>
-    <div>
-        <ui-drawer trigger="menu-button" side="left">
+    <div class="l-sidebar">
+        <ui-drawer class="drawer-md" trigger="menu-button">
             <div class="ui-drawer__backdrop"></div>
             <aside class="ui-drawer__panel">
                 <p>entry 1</p>
@@ -20,11 +20,11 @@
                 <p>entry 3</p>
             </aside>
         </ui-drawer>
-        <!-- <section class="l-stack l-sidebar-md--right">
-            <article> article two </article>
-            <article> article three </article>
-        </section> -->
+        <main>
+            This is the main content
+        </main>
     </div>
+
 </body>
 
 </html>
