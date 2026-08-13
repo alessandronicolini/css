@@ -1,24 +1,20 @@
 @use "../tokens" as tokens;
 
 /*
-Nell'implementazione attuale l'aside fisso è il primo
-elemento che diventa allineato a sinsitra quando il layout è attivo,
-la versione right è parte del contratto, fa si che l'aside
-sia presentato a destra, inceve che a sinistra.
-L'aside è sempre il primo elemento dei due (se presi disposti verticalmente)!
+Layout formato da due parti:
+- la prima parte è l'aside e non ha vincoli particolari, occupa l'ampiezza del suo contenuto
+- la seconda parte è il panel e si espande fino ad occupare tutto lo spazio disponibile
 
-Potrebbe aver senso far si che uno dei due elementi qualsiasi possa diventare aside
-presentato a destra o sinistra ?
+un vincolo di ampiezza fisso sulla prima parte va imposto a mano con una utility dedicata
+che fa definita in un elemento qualsiasi innestato dentro l'aside a seconda del caso.
+
+La versione right inverte l'ordine di aside a panel.
 */
 @mixin sidebar {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: var(--layout-gap, 1rem);
-
-    > :first-child {
-        flex: 0 0 var(--aside-width, 18rem);
-    }
 
     > :last-child {
         flex: 1 1 0;
