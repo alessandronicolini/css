@@ -12,9 +12,9 @@
         @include stack;
     }
 
-    @each $br-name, $br in tokens.$breakpoints {
-        @media (width >= $br) {
-            .l-stack-#{$br-name} {
+    @each $br-name, $_ in tokens.$breakpoints {
+        @include tokens.from($br-name) {
+            .#{$br-name}-l-stack {
                 @include stack;
             }
         }
