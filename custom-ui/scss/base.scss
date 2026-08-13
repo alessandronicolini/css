@@ -4,7 +4,7 @@
 
 
 @mixin define-typography-properties {
-    @each $name, $style in tokens.$typography {
+    @each $name, $style in tokens.$typography-conf {
         $size: map.get(tokens.$font-sizes, map.get($style, size));
         $weight: map.get(tokens.$font-weights, map.get($style, weight));
         $line-height: map.get(tokens.$font-line-heights, map.get($style, line-height));
@@ -37,7 +37,7 @@
         @include define-color-properties;
     }
 
-    @each $name, $style in tokens.$typography {
+    @each $name, $style in tokens.$typography-conf {
         .t-#{$name} {
             font-size: var(--font-#{$name}-size);
             font-weight: var(--font-#{$name}-weight);
