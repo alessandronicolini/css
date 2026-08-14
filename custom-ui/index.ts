@@ -1,2 +1,2 @@
-export * from "./behaviour-controllers";
+export * from "./behaviours";
 import "./scss/index.scss";
