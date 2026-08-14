@@ -1,0 +1,5 @@
+@layer utilities {
+    .u-width {
+        width: var(--u-width, auto);
+    }
+}
