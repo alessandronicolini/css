@@ -6,25 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="module" src="./index.ts"></script>
+    <script type="module" src="index.ts"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <button id="menu-button">Menu button</button>
     <div class="l-sidebar">
-        <ui-drawer class="drawer-md" trigger="menu-button">
-            <div class="ui-drawer__backdrop"></div>
-            <aside class="ui-drawer__panel">
+        <!-- <ui-drawer data-behaviour-trigger="menu-button" class="drawer-md">
+            <nav class="c-sidebar u-width" style="--u-width: 5rem;">
                 <p>entry 1</p>
                 <p>entry 2</p>
                 <p>entry 3</p>
-            </aside>
-        </ui-drawer>
-        <main>
+            </nav>
+        </ui-drawer> -->
+        <aside data-behaviour="drawer" data-behaviour-trigger="menu-button" class="drawer-lg">
+            <nav class="c-sidebar u-width" style="--u-width: 5rem;">
+                <p>entry 1</p>
+                <p>entry 2</p>
+                <p>entry 3</p>
+            </nav>
+        </aside>
+        <main class="sidebar--content">
             This is the main content
         </main>
     </div>
-
 </body>
 
 </html>
