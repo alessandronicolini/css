@@ -1,0 +1,21 @@
+.box {
+    --box-max-width: auto;
+    --box-padding: 0;
+    --box-min-width: auto;
+
+    padding: var(--box-padding);
+    max-width: var(--box-max-width);
+    min-width: var(--box-min-width);
+    margin: 0 auto;
+}
+
+.box--page {
+    --box-max-width: 45rem;
+    --box-padding: 1rem;
+}
+
+.box--sidebar {
+    --box-min-width: min(15rem, 70%);
+    --box-max-width: min(15rem, 70%);
+    --box-padding: 1rem;
+}

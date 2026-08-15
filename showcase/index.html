@@ -12,26 +12,29 @@
 
 <body class="view">
     <header class="view">
-        <button id="menu-button">Menu button</button>
+        <div class="box box--page">
+            <button id="menu-button">Menu button</button>
+        </div>
     </header>
 
     <main class="view">
         <aside data-behaviour="drawer" data-behaviour-trigger="menu-button" class="drawer-md">
-            <nav class="c-sidebar u-width" style="--u-width: 8rem;">
-
+            <nav class="box box--sidebar surface-100">
                 <div>  
                     <p>layouts</p>
                     <a href="./pages/layouts/metadata-items.html"> metadata items </a>
                 </div>
             </nav>
         </aside>
-        <div>
+        <div class="box box--page">
             This is the main content
         </div>
     </main>
 
     <footer class="view">
-        This is the footer
+        <div class="box box--page">
+            This is the footer
+        </div>
     </footer>
 </body>
 
