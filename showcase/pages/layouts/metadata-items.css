@@ -1,0 +1,112 @@
+.layout-container {
+    container-type: inline-size;
+    container-name: metadata;
+
+    padding:1rem;
+}
+
+.metadata-list {
+    display: flex;
+    gap:2rem;
+    flex-direction: column;
+}
+
+.metadata {
+    display: flex;
+    border-color: red;
+}
+
+.metadata__text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+@container metadata (width > 40rem) {
+    .metadata__text {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .metadata-list {
+        flex-direction: row;
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+
+.l-container {
+    container-type: inline-size;
+    container-name: l-container;
+}
+
+.l-box {
+    --box-padding: 1rem;
+    --box-max-width: auto;
+
+    padding: var(--box-padding);
+    max-width: var(--box-max-width);
+}
+
+.l-stack {
+    --stack-gap: 1rem;
+    --stack-direction: column;
+
+    display: flex;
+    flex-direction: var(--stack-direction);
+    flex-wrap: nowrap;
+    gap: var(--stack-gap);
+}
+
+.u-grow {
+    flex-grow: 1;
+}
+
+.d-split-content {
+    justify-content: space-between;
+}
+
+.l-cluster {
+    --cluster-gap: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--cluster-gap);
+}
+
+@container l-container (width > 50rem) {
+
+    .d-center-content-gt40 {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .l-stack-gt40 {
+        --stack-gap: 1rem;
+        --stack-direction: column;
+
+        display: flex;
+        flex-direction: var(--stack-direction);
+        flex-wrap: nowrap;
+        gap: var(--stack-gap);
+    }
+
+    .l-hstack-gt40 {
+        --stack-gap: 1rem;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: var(--stack-gap);
+    }
+
+    .l-cluster-gt40 {
+        --cluster-gap: 1rem;
+        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--cluster-gap);
+    }
+}
