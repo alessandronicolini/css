@@ -20,3 +20,13 @@
         }
     }
 }
+/* EVERY LAYOUT IMPLEMENTATION */
+.cluster {
+    --cluster-gap: 1rem;
+    --cluster-justify: start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space, 1rem);
+    justify-content: center;
+    align-items: start;
+}

@@ -10,6 +10,7 @@ che fa definita in un elemento qualsiasi innestato dentro l'aside a seconda del 
 
 La versione right inverte l'ordine di aside a panel.
 */
+
 @mixin sidebar {
     display: flex;
     flex-direction: row;
@@ -54,4 +55,23 @@ La versione right inverte l'ordine di aside a panel.
             }
         }
     }
+}
+
+/* EVERY LAYOUT IMPLEMENTATION */
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sidebar {
+    flex-basis: var(--sidebar-width, 20rem);
+    flex-grow: 1;
+}
+
+// min-width: 50% significa che lo switch avviene quando le due parti hanno la spessa ampiezza
+.not-sidebar {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
 }

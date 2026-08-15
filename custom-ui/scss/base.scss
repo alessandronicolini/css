@@ -28,10 +28,6 @@
         text-decoration: none;
     }
 
-    .view {
-        border: 1px solid black;
-    }
-
     :root {
         @include define-typography-properties;
         @include define-color-properties;
