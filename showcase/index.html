@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 
-<body>
-    <header>
-        This is the header
+<body class="view">
+    <header class="view">
+        <button id="menu-button">Menu button</button>
     </header>
-    <button id="menu-button">Menu button</button>
-    <div class="l-sidebar">
+
+    <main class="view">
         <aside data-behaviour="drawer" data-behaviour-trigger="menu-button" class="drawer-md">
             <nav class="c-sidebar u-width" style="--u-width: 8rem;">
 
@@ -25,11 +25,12 @@
                 </div>
             </nav>
         </aside>
-        <main>
+        <div>
             This is the main content
-        </main>
-    </div>
-    <footer>
+        </div>
+    </main>
+
+    <footer class="view">
         This is the footer
     </footer>
 </body>
