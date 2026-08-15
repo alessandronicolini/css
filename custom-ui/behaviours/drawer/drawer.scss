@@ -50,24 +50,31 @@
     }
 }
 
-
-@layer components {
-    @each $br-name, $_ in tokens.$breakpoints {
-
-        @include tokens.until($br-name) {
-            ui-drawer.drawer-#{$br-name} {
-                @include drawer;
-            }
-        }
-
-        @include tokens.until($br-name) {
-            [data-behaviour="drawer"].drawer-#{$br-name} {
-                @include drawer;
-            }
-        }
-
-    }
+ui-drawer{
+    @include drawer;
 }
+
+[data-behaviour="drawer"]{
+    @include drawer;
+}
+
+// @layer components {
+//     @each $br-name, $_ in tokens.$breakpoints {
+
+//         @include tokens.until($br-name) {
+//             ui-drawer.drawer-#{$br-name} {
+//                 @include drawer;
+//             }
+//         }
+
+//         @include tokens.until($br-name) {
+//             [data-behaviour="drawer"].drawer-#{$br-name} {
+//                 @include drawer;
+//             }
+//         }
+
+//     }
+// }
 // what about the convention 
 // - md-attribute: meaning something is active from md on and 
 // - attribute-md: meaning something is active until md
