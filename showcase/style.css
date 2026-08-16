@@ -19,13 +19,3 @@ body {
         flex-grow: 1;
     }
 }
-
-.surface-50 {
-    color: var(--c-on-surface-50);
-    background-color: var(--c-surface-50);
-}
-
-.surface-100 {
-    color: var(--c-on-surface-50);
-    background-color: var(--c-surface-50);
-}

@@ -22,4 +22,22 @@ $colors-conf: (
 
     primary: #F67D59,
     on-primary: map.get($neutral, 950),
-)
+);
+
+@layer tokens {
+    :root {
+        @each $role, $color in tokens.$colors-conf {
+            --color-#{$role}: #{$color};
+        }
+    }
+
+    .surface-50 {
+        color: var(--color-on-surface-50);
+        background-color: var(--color-surface-50);
+    }
+
+    .surface-100 {
+        color: var(--color-on-surface-50);
+        background-color: var(--color-surface-50);
+    }
+}

@@ -2,26 +2,11 @@
 @use "tokens";
 
 
-
-
-
-@mixin define-color-properties {
-    @each $role, $color in tokens.$colors-conf {
-        --c-#{$role}: #{$color};
-    }
-}
-
 @layer base {
     * {
         box-sizing: border-box;
         margin: 0;
         text-decoration: none;
     }
-
-    :root {
-        @include define-color-properties;
-    }
-
-
 }
 
