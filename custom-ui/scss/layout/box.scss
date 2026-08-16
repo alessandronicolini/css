@@ -19,3 +19,7 @@
     --box-max-width: min(15rem, 70%);
     --box-padding: 1rem;
 }
+
+.box--text {
+    --box-max-width: 50ch;
+}
