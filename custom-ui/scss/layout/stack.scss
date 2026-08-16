@@ -4,19 +4,36 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: var(--layout-gap, 1rem);
+    gap: var(--stack-gap, 1rem);
 }
 
 @layer layout {
-    .l-stack {
+    .stack {
         @include stack;
-    }
 
-    @each $br-name, $_ in tokens.$breakpoints {
-        @include tokens.from($br-name) {
-            .#{$br-name}-l-stack {
-                @include stack;
-            }
+        &.narrower {
+            --stack-gap: 0.25rem;
+        }
+
+        &.narrow {
+            --stack-gap: 0.5rem;
+        }
+
+        &.wide {
+            --stack-gap: 1.5rem;
+        }
+
+        &.wider {
+            --stack-gap: 2rem;
         }
     }
+
+
+    // @each $br-name, $_ in tokens.$breakpoints {
+    //     @include tokens.from($br-name) {
+    //         .#{$br-name}-stack {
+    //             @include stack;
+    //         }
+    //     }
+    // }
 }
