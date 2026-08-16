@@ -4,3 +4,8 @@
 @forward "switcher";
 @forward "grid";
 @forward "box";
+
+.centered {
+    align-items: center;
+    justify-content: center;
+}
