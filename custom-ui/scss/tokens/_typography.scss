@@ -111,7 +111,7 @@ $typography-conf: (
     ),
 );
 
-@layer base {
+@layer tokens {
     :root {
         @each $name, $style in $typography-conf {
             $size: map.get($font-sizes, map.get($style, size));
