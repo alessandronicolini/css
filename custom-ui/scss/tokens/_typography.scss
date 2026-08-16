@@ -111,24 +111,27 @@ $typography-conf: (
     ),
 );
 
-:root {
-    @each $name, $style in $typography-conf {
-        $size: map.get($font-sizes, map.get($style, size));
-        $weight: map.get($font-weights, map.get($style, weight));
-        $line-height: map.get($font-line-heights, map.get($style, line-height));
+@layer base {
+    :root {
+        @each $name, $style in $typography-conf {
+            $size: map.get($font-sizes, map.get($style, size));
+            $weight: map.get($font-weights, map.get($style, weight));
+            $line-height: map.get($font-line-heights, map.get($style, line-height));
 
-        --font-#{$name}-size: #{$size};
-        --font-#{$name}-weight: #{$weight};
-        --font-#{$name}-line-height: #{$line-height};
-    }
+            --font-#{$name}-size: #{$size};
+            --font-#{$name}-weight: #{$weight};
+            --font-#{$name}-line-height: #{$line-height};
+        }
 
-    @each $name, $style in $typography-conf {
-        .text-#{$name} {
-            font-size: var(--font-#{$name}-size);
-            font-weight: var(--font-#{$name}-weight);
-            line-height: var(--font-#{$name}-line-height);
+        @each $name, $style in $typography-conf {
+            .text-#{$name} {
+                font-size: var(--font-#{$name}-size);
+                font-weight: var(--font-#{$name}-weight);
+                line-height: var(--font-#{$name}-line-height);
+            }
         }
     }
 }
+
 
     
