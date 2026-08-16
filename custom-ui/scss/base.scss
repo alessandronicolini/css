@@ -3,17 +3,7 @@
 
 
 
-@mixin define-typography-properties {
-    @each $name, $style in tokens.$typography-conf {
-        $size: map.get(tokens.$font-sizes, map.get($style, size));
-        $weight: map.get(tokens.$font-weights, map.get($style, weight));
-        $line-height: map.get(tokens.$font-line-heights, map.get($style, line-height));
 
-        --f-#{$name}-size: #{$size};
-        --f-#{$name}-weight: #{$weight};
-        --f-#{$name}-line-height: #{$line-height};
-    }
-}
 
 @mixin define-color-properties {
     @each $role, $color in tokens.$colors-conf {
@@ -29,16 +19,9 @@
     }
 
     :root {
-        @include define-typography-properties;
         @include define-color-properties;
     }
 
-    @each $name, $style in tokens.$typography-conf {
-        .t-#{$name} {
-            font-size: var(--font-#{$name}-size);
-            font-weight: var(--font-#{$name}-weight);
-            line-height: var(--font-#{$name}-line-height);
-        }
-    }
+
 }
 

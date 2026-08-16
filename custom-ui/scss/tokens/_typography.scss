@@ -56,51 +56,79 @@ $typography-conf: (
         line-height: tight,
     ),
 
-    heading-1: (
+    heading-big: (
         size: 800,
         weight: bold,
         line-height: tight,
     ),
 
-    heading-2: (
+    heading: (
         size: 700,
         weight: bold,
         line-height: tight,
     ),
 
-    heading-3: (
+    heading-small: (
         size: 600,
         weight: semibold,
         line-height: tight,
     ),
 
-    heading-4: (
+    title-big: (
         size: 500,
         weight: semibold,
         line-height: tight,
     ),
 
-    heading-5: (
+    title: (
         size: 400,
         weight: semibold,
         line-height: tight,
     ),
 
-    body: (
+    title-small: (
         size: 300,
-        weight: regular,
-        line-height: regular,
+        weight: semibold,
+        line-height: tight,
     ),
 
-    small: (
+    body: (
         size: 200,
         weight: regular,
         line-height: regular,
     ),
 
-    extra-small: (
+    label: (
         size: 100,
         weight: regular,
         line-height: regular,
     ),
+
+    label-small: (
+        size: 50,
+        weight: regular,
+        line-height: regular,
+    ),
 );
+
+:root {
+    @each $name, $style in $typography-conf {
+        $size: map.get($font-sizes, map.get($style, size));
+        $weight: map.get($font-weights, map.get($style, weight));
+        $line-height: map.get($font-line-heights, map.get($style, line-height));
+
+        --font-#{$name}-size: #{$size};
+        --font-#{$name}-weight: #{$weight};
+        --font-#{$name}-line-height: #{$line-height};
+    }
+
+    @each $name, $style in $typography-conf {
+        .text-#{$name} {
+            font-size: var(--font-#{$name}-size);
+            font-weight: var(--font-#{$name}-weight);
+            line-height: var(--font-#{$name}-line-height);
+        }
+    }
+}
+
+    
